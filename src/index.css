@@ -1,13 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --primary: #231F20;
+  --app-color: #034EA2;
+  --white-color: #DDDDDD;
+}
+
+* {
+  font-family: "Jost", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Jost", sans-serif;
+  color: var(--primary);
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.app-container {
+  position: relative;
+  max-width: 500px;
+  height: 100vh;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.todo-container {
+  padding: 0 10px;
+}
+
+.todo-heading {
+  background-color: var(--app-color);
+  color: white;
+  padding: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+
+.accordion-collapse {
+  display: none;
+}
+
+.accordion-item {
+  margin-bottom: 14px;
+}
+
+.accordion-item .show {
+  display: block;
+}
+
+.task-container {
+  padding: 14px;
+  border-bottom: 1px solid var(--white-color);
+
+
+}
+
+.task-container:hover {
+  background: #F7F7F7;
+  border-radius: 3px;
+}
+
+.task-status {
+  font-size: 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+}
+
+.first-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  color: var(--app-color);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.description {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.task-container:hover {
+  cursor: pointer;
+  background-color: #F7F7F7;
+}
+
+.accordion-header {
+  padding: 14px 10px;
+  margin-bottom: 10px;
+  background: #F3F6F9;
+  color: var(--primary);
+  font-size: 10px;
+  border-radius: 4px;
+}
+
+.accordion-button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.iconClass {
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  display: block;
+}
+
+.pendingStatus {
+  background-color: red;
+}
+
+.completedStatus {
+  background-color: green;
+}
+
+.inProgressStatus {
+  background-color: gold;
+}
+
+
+.input-text textarea {
+  width: 100%;
+  border-radius: 2px;
+  padding: 4px;
+}
+
+.form-container {
+  margin: 40px 10px;
+}
+
+.form-container input,
+.form-container textarea {
+  border: 1px solid var(--white-color);
+  border-radius: 3px;
+  font-size: 12px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 7px 12px;
+  color: var(--primary);
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+  outline: none;
+}
+
+.footer-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-container button {
+  padding: 10px 35px;
+}
+
+.action-buttons {
+  display: flex;
+  margin-top: 6px;
+  justify-content: flex-end;
+  gap: 10px
+}
+
+.action-buttons .edit {
+  color: var(--app-color);
+  font-size: 20px;
+
+}
+
+.action-buttons .remove {
+  color: #E32A34;
+  font-size: 20px;
+
+}
+
+.action-buttons svg {
+  cursor: pointer;
+}
+
+.add-todo-btn {
+  position: absolute;
+  background: var(--app-color);
+  margin: auto;
+  right: 10px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 20px;
+  font-size: 20px;
+}
+
+.btn {
+  background: var(--app-color);
+  box-shadow: 0px 4px 4px 0px #DDDDDD40;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #fff;
+  border: 1px solid var(--app-color)
+}
+
+.btn-border {
+  color: var(--app-color);
+  background: transparent;
+}
+
+.status {
+  border: 1px solid var(--white-color);
+  border-radius: 3px;
+  font-size: 12px;
+  width: 100%;
+  padding: 7px 12px;
+  color: var(--primary);
+}
+
+.status-dropdown {
+  border: 1px solid var(--white-color);
+  padding: 14px;
+  margin-top: 10px;
+}
+
+.status-dropdown .dropdown-item {
+  color: var(--primary);
+  padding: 12px 14px;
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  cursor: pointer;
+}
+
+.status-dropdown .dropdown-item:hover {
+  background: #F7F7F7;
 }
