@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useReducer, useState } from "react";
 
 import reducers from "./reducers";
 
+import { getTodoMapping } from "./helper";
 import { TODOS } from "./constants";
 
 const TodoAppContext = React.createContext();
@@ -17,13 +18,7 @@ const TodoAppProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("todo-list", JSON.stringify(todos));
-    setTodosMapping(
-      todos.reduce((mapping, task) => {
-        const { status } = task;
-        mapping[status] = mapping[status] ? [...mapping[status], task] : [task];
-        return mapping;
-      }, {})
-    );
+    setTodosMapping(getTodoMapping(todos));
   }, [todos]);
 
   return (
