@@ -41,7 +41,7 @@ const EditTodo = () => {
 
   return (
     <div>
-      <Header heading="Edit Todo"/>
+      <Header heading="Edit Todo" showBackBtn/>
       <div className="form-container">
         <div className="input-text">
           <input

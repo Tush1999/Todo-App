@@ -8,7 +8,7 @@ export const Header = ({ heading, showBackBtn = false }) => {
   return (
     <div className="todo-heading">
       {showBackBtn && (
-        <button onClick={() => navigate("/")}>
+        <button onClick={() => navigate("/")} className="back-btn">
           <IoMdArrowRoundBack />
         </button>
       )}
